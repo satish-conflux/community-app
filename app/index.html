@@ -178,10 +178,11 @@
                     </a>
                     <ul class="nav navbar-nav" id="main-menu-left">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" ng-class="{ activate: isActive('clients') }"  href="#"><i class="icon-group"></i> {{ 'label.anchor.clients' | translate }}<b class="caret"></b></a>
+                            <a class="dropdown-toggle" data-toggle="drlabel.anchor.groupsopdown" ng-class="{ activate: isActive('clients') }"  href="#"><i class="icon-group"></i> {{ 'label.anchor.clients' | translate }}<b class="caret"></b></a>
                             <ul class="dropdown-menu" id="swatch-menu">
                                 <li><a href="#/clients" has-permission='READ_CLIENT'>{{ 'label.anchor.clients' | translate }}</a></li>
                                 <li><a href="#/groups" has-permission='READ_GROUP'>{{ 'label.anchor.groups' | translate }}</a></li>
+                                <li><a href="#/groups/shg" has-permission='READ_GROUP'>{{ 'label.anchor.sh.groups' | translate }}</a></li>
                                 <li><a href="#/centers" has-permission='READ_CENTER'>{{ 'label.anchor.centers' | translate }}</a></li>
                             </ul>
                         </li>

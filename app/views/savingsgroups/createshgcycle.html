@@ -1,0 +1,211 @@
+<div ng-controller="CreateShgCycleController" class="col-md-12">
+    <ul class="breadcrumb">
+        <li class="active">{{'label.heading.shg.group.cycle' | translate}}</li>
+    </ul>
+
+    <form name="createshgcycleform" novalidate="" class="form-horizontal well" rc-submit="submit()">
+        <api-validate></api-validate>
+        <fieldset>
+            <legend class="bolder">{{'label.heading.create.shg.cycle' | translate}}</legend>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="expectedStartDate">
+                    {{'label.input.shg.cycle.expected.start.date' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input id="expectedStartDate" type="text" name="expectedStartDate" datepicker-pop="dd MMMM yyyy"
+                           ng-model="formData.expectedStartDate" is-open="opened1" max="restrictDate"
+                           class="form-control" required late-validate/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgcycleform" valattribute="expectedStartDate"/>
+                </div>
+
+                <label class="control-label col-sm-2" for="expectedEndDate">
+                    {{'label.input.shg.cycle.expected.end.date' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input id="expectedEndDate" type="text" name="expectedEndDate" datepicker-pop="dd MMMM yyyy"
+                           ng-model="formData.expectedEndDate" is-open="opened1" max="restrictDate" class="form-control"
+                           required late-validate/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgcycleform" valattribute="expectedEndDate"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="expectedNumOfMeetings">
+                    {{'label.input.shg.cycle.expected.num.of.meetings' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="expectedNumOfMeetings" name="expectedNumOfMeetings"
+                           ng-model="formData.expectedNumOfMeetings" number-format required late-Validate
+                           maxlength="8"/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgcycleform" valattribute="expectedNumOfMeetings"/>
+                </div>
+
+                <label class="control-label col-sm-2" for="isShareBased">
+                    {{'label.input.shg.cycle.is.share.based' | translate}}<span class="required"></span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="checkbox" id="isShareBased" name="isShareBased"
+                           ng-model="formData.isShareBased" ng-init="formData.isShareBased = false"/>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+
+            <div class="form-group" ng-if="formData.isShareBased==true">
+                <label class="control-label col-sm-2"></label>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2"></div>
+
+                <label class="control-label col-sm-2" for="unitPriceOfShare">
+                    {{'label.input.shg.cycle.unit.price.of.share' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="unitPriceOfShare" name="unitPriceOfShare"
+                           ng-model="formData.unitPriceOfShare" number-format required late-Validate
+                           maxlength="13"/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgcycleform" valattribute="unitPriceOfShare"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="isClientAdditionsAllowedInActiveCycle">
+                    {{'label.input.shg.cycle.is.client.additions.allowed.in.active.cycle' | translate}}<span
+                        class="required"></span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="checkbox" id="isClientAdditionsAllowedInActiveCycle"
+                           name="isClientAdditionsAllowedInActiveCycle"
+                           ng-model="formData.isClientAdditionsAllowedInActiveCycle"
+                           ng-init="formData.isClientAdditionsAllowedInActiveCycle = false"/>
+                </div>
+                <div class="col-sm-2"></div>
+
+                <label class="control-label col-sm-2" for="isClientExitAllowedInActiveCycle">
+                    {{'label.input.shg.cycle.is.client.exit.allowed.in.active.cycle' | translate}}<span
+                        class="required"></span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="checkbox" id="isClientExitAllowedInActiveCycle" name="isClientExitAllowedInActiveCycle"
+                           ng-model="formData.isClientExitAllowedInActiveCycle"
+                           ng-init="formData.isClientExitAllowedInActiveCycle = false"/>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="doesIndividualClientExitForfeitGains">
+                    {{'label.input.shg.cycle.does.individual.client.exit.forfeit.gains' | translate}}<span
+                        class="required"></span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="checkbox" id="doesIndividualClientExitForfeitGains"
+                           name="doesIndividualClientExitForfeitGains"
+                           ng-model="formData.doesIndividualClientExitForfeitGains"
+                           ng-init="formData.doesIndividualClientExitForfeitGains = false"/>
+                </div>
+                <div class="col-sm-2"></div>
+
+                <label class="control-label col-sm-2" for="depositsPaymentStrategy">
+                    {{'label.input.shg.deposits.payment.strategy' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <select id="depositsPaymentStrategy" name="depositsPaymentStrategy"
+                            ng-model="formData.depositsPaymentStrategy" class="form-control"
+                            ng-options="gender.id as gender.name for gender in depositsPaymentStrategyOptions" value="{{gender.id}}" required late-validate>
+                        <option value="">--{{'label.menu.selectone' | translate}}--</option>
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgcycleform" valattribute="depositsPaymentStrategy"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="isCopyFundDefinitions">
+                    Copy fund definitions from previous cycle<span class="required"></span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="checkbox" id="isCopyFundDefinitions" name="isCopyFundDefinitions"
+                           ng-model="formData.isCopyFundDefinitions" ng-init="formData.isCopyFundDefinitions = false"/>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+
+            <br>
+            <legend class="bolder">{{'label.heading.currency' | translate}}</legend>
+            <div class="form-group">
+                <label class="control-label col-sm-2">{{ 'label.input.currency' | translate }}<span class="required">*</span>
+                    <i class="icon-question-sign" tooltip="{{'label.tooltip.loanproduct.currency' | translate}}"
+                       tooltip-append-to-body="true"></i>
+                </label>
+
+                <div class="col-sm-2">
+                    <select id="currencyCode" ng-model="formData.currencyCode" class="form-control"
+                            ng-options="currency.code as currency.name for currency in currencyOptions"
+                            value="{{currency.code}}">
+                        <option value="">--{{'label.menu.selectone' | translate}}--</option>
+                    </select>
+                </div>
+                <label class="control-label col-sm-2 col-sm-offset-2">{{ 'label.input.decimalplaces' | translate }}<span
+                        class="required">*</span>
+                    <i class="icon-question-sign" tooltip="{{'label.tooltip.loanproduct.decimalplaces' | translate}}"
+                       tooltip-append-to-body="true"></i>
+                </label>
+
+                <div class="col-sm-2">
+                    <input type="text" id="digitsAfterDecimal" name="decimalplace" class="form-control"
+                           ng-model="formData.digitsAfterDecimal" required late-validate/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgcycleform" valattribute="decimalplace"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">{{ 'label.input.currencyinmultiplesof' | translate }}<span
+                        class="required">*</span>
+                    <i class="icon-question-sign" tooltip="{{'label.tooltip.loanproduct.currencyinmultiplesof' | translate}}"
+                       tooltip-append-to-body="true"></i>
+                </label>
+
+                <div class="col-sm-2">
+                    <input type="text" id="inMultiplesOf" class="form-control" name="multiplesof"
+                           ng-model="formData.inMultiplesOf" required late-validate/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgcycleform" valattribute="multiplesof"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">{{ 'label.input.installmentinmultiplesof' | translate }}<span
+                        class="required">*</span></label>
+
+                <div class="col-sm-2">
+                    <input type="text" id="installmentAmountInMultiplesOf" class="form-control"
+                           name="installmentAmountInMultiplesOf"
+                           ng-model="formData.installmentAmountInMultiplesOf" required late-validate/>
+                </div>
+
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgcycleform" valattribute="installmentAmountInMultiplesOf"/>
+                </div>
+            </div>
+
+            <br>
+            <div class="col-md-offset-5">
+                <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">{{'label.button.cancel' | translate}}</a>
+                <button id="save" type="submit" class="btn btn-primary" has-permission='CREATE_CYCLE'>
+                    {{'label.button.save' | translate}}
+                </button>
+            </div>
+        </fieldset>
+    </form>
+
+</div>

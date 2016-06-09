@@ -1,0 +1,22 @@
+{
+  "depositsPaymentStrategyOptions": [
+    {
+      "id": 1,
+      "name": "One"
+    },
+    {
+      "id": 2,
+      "name": "Two"
+    }
+  ],
+  "currencyOptions": [
+    {
+      "code": 1,
+      "name": "One"
+    },
+    {
+      "code": 2,
+      "name": "Two"
+    }
+  ]
+}

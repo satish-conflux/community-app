@@ -185,7 +185,9 @@ define(['Q', 'underscore', 'mifosX'], function (Q) {
             'shares/EditShareAccountController',
             'shares/ShareAccountActionsController',
             'groups/GroupController',
+            'savingsgroups/ShgGroupController',
             'groups/ViewGroupController',
+            'savingsgroups/ViewShgGroupController',
             'groups/AttachMeetingController',
             'groups/EditMeetingController',
             'groups/EditMeetingBasedOnMeetingDatesController',
@@ -218,6 +220,7 @@ define(['Q', 'underscore', 'mifosX'], function (Q) {
             'deposits/recurring/AddNewRecurringDepositChargeController',
             'deposits/recurring/ViewRecurringDepositTransactionController',
             'groups/CreateGroupController',
+            'savingsgroups/CreateShgGroupController',
             'groups/EditGroupController',
             'groups/GroupAttendanceController',
             'groups/CloseGroupController',
@@ -280,7 +283,9 @@ define(['Q', 'underscore', 'mifosX'], function (Q) {
             'product/tax/CreateTaxGroupController',
             'product/tax/ViewTaxGroupController',
             'product/tax/EditTaxGroupController',
-            'product/tax/TaxGroupController'
+            'product/tax/TaxGroupController',
+            'savingsgroups/CreateShgFundController',
+            'savingsgroups/CreateShgCycleController'
         ],
         filters: [
             'StatusLookup',

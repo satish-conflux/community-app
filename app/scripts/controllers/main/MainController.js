@@ -8,6 +8,8 @@
                 scope.releasedate = data.releasedate;
             });
 
+            scope.shgJsonData = {};
+
             scope.islogofoldernamefetched = false;
             scope.islogofoldernameconfig = false;
             scope.isFaviconPath = false;

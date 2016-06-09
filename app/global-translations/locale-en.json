@@ -711,6 +711,7 @@
     "label.heading.repeatdetails": "Repeat Details",
     "label.heading.meetingdetails": "Meeting Details",
     "label.heading.creategroup": "Create Group",
+    "label.heading.create.sh.group": "Create Savings Group",
     "label.heading.editgroup": "Edit Group",
     "label.heading.managemembers": "Manage Members",
     "label.heading.associatenewmembers": "Associate New Members",
@@ -735,10 +736,12 @@
 
     "#Anchors": "..",
     "label.anchor.groups": "Groups",
+    "label.anchor.sh.groups": "Savings Groups",
     "label.anchor.viewgroup": "View Group",
     "label.anchor.attachmeeting": "Attach Meeting",
     "label.anchor.editmeeting": "Edit Meeting",
     "label.anchor.creategroup": "Create Group",
+    "label.anchor.create.shgroup": "Create Savings Group",
 
     "#Inputs": "..",
     "label.input.role": "Role",
@@ -760,6 +763,7 @@
 
     "#Buttons": "..",
     "label.button.creategroup": "Create Group",
+    "label.button.create.sh.group": "Create Savings Group",
     "label.button.groupsavingapplication": "Group Saving Application",
     "label.button.grouploanapplication": "Group Loan Application",
     "label.button.jlgloanapplication": "JLG Loan Application",
@@ -2687,6 +2691,8 @@
     "label.button.editcode":"Edit Code",
     "label.button.pending.tasks":"Pending Tasks",
     "label.button.addpreferences":"Add Preferences",
+    "label.button.create.fund":"Create Fund",
+    "label.button.create.cycle":"Initiate Cycle",
 
     "#Misc Labels": "..",
     "label.selectstatus": "Select status",
@@ -4024,6 +4030,37 @@
     "RepaymentRescheduleType.move.to.next.working.day":"move to next working day",
     "RepaymentRescheduleType.move.to.next.repayment.meeting.day":"move to next repayment meeting day",
     "RepaymentRescheduleType.move.to.previous.working.day":"move to previous working day",
-    "label.heading.loan.foreclosure": "Loan Foreclosure"
+    "label.heading.loan.foreclosure": "Loan Foreclosure",
 
+    "#SGH Create Fund Labels":"----------------------------------",
+    "label.heading.shg.group.cycle":"Group Cycle",
+    "label.heading.create.shg.cycle": "Initiate Cycle",
+    "label.input.shg.cycle.expected.start.date":"Expected start date",
+    "label.input.shg.cycle.expected.end.date":"Expected end date",
+    "label.input.shg.cycle.expected.num.of.meetings":"Expected num of meetings",
+    "label.input.shg.cycle.is.share.based":"Is share based",
+    "label.input.shg.cycle.unit.price.of.share":"Unit price of share",
+    "label.input.shg.cycle.is.client.additions.allowed.in.active.cycle":"Is client additions allowed in active cycle",
+    "label.input.shg.cycle.is.client.exit.allowed.in.active.cycle":"Is client exit allowed in active cycle",
+    "label.input.shg.cycle.does.individual.client.exit.forfeit.gains":"Does individual client exit forfeit gains",
+    "label.input.shg.deposits.payment.strategy":"Deposits payment strategy",
+
+    "#SGH Create Fund Labels":"----------------------------------",
+    "label.heading.create.shg.fund": "Create Savings Group Fund",
+    "label.heading.create.shg.fund.terms": "Terms",
+    "label.input.shg.fund.minimum.deposit":"Minimum deposit",
+    "label.input.shg.fund.maximum.deposit":"Maximum deposit",
+    "label.input.shg.fund.total.cash.in.hand":"Total cash in hand",
+    "label.input.shg.fund.total.cash.in.bank":"Total cash in bank",
+    "label.input.shg.fund.total.deposits":"Total deposits",
+    "label.input.shg.fund.total.loan.portfolio":"Total loan portfolio",
+    "label.input.shg.fund.total.fee.collected":"Total fee collected",
+    "label.input.shg.fund.total.expenses":"Total expenses",
+    "label.input.shg.fund.total.income":"Total income",
+    "label.input.shg.fund.loan.limit.based.on.savings":"Loan limit based on savings",
+    "label.input.shg.fund.loan.limit.amount":"Loan limit amount",
+    "label.input.shg.fund.loan.limit.factor":"Loan limit factor",
+    "label.input.shg.fund.loan.product.annual.nominal.interest.rate":"Annual nominal interest rate",
+
+    "#Keep this line at the end only" : ""
 }

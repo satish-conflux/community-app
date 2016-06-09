@@ -1,0 +1,537 @@
+<div ng-controller="CreateShgFundController" class="col-md-12">
+    <ul class="breadcrumb">
+        <li class="active">Group Fund</li>
+    </ul>
+
+    <form name="createshgfundform" novalidate="" class="form-horizontal well" rc-submit="submit()">
+        <api-validate></api-validate>
+        <fieldset>
+            <legend class="bolder">{{'label.heading.create.shg.fund' | translate}}</legend>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="name">
+                    {{'label.input.name' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-8">
+                    <div>
+                        <input type="text" class="form-control" id="name" name="name"
+                               ng-model="formData.name" required late-Validate/>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="name"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="minimumDeposit">
+                    {{'label.input.shg.fund.minimum.deposit' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <div>
+                        <input type="text" class="form-control" id="minimumDeposit" name="minimumDeposit"
+                               ng-model="formData.minimumDeposit"
+                               number-format required late-Validate/>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="minimumDeposit"/>
+                </div>
+
+                <label class="control-label col-sm-2" for="maximumDeposit">
+                    {{'label.input.shg.fund.maximum.deposit' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="maximumDeposit" name="maximumDeposit"
+                           ng-model="formData.maximumDeposit"
+                           number-format required late-Validate/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="maximumDeposit"/>
+                </div>
+            </div>
+
+            <div class="form-group" ng-if="false">
+                <label class="control-label col-sm-2" for="totalCashInHand">
+                    {{'label.input.shg.fund.total.cash.in.hand' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <div>
+                        <input type="text" class="form-control" id="totalCashInHand" name="totalCashInHand"
+                               ng-model="formData.totalCashInHand"
+                               number-format required late-Validate/>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="totalCashInHand"/>
+                </div>
+
+                <label class="control-label col-sm-2" for="totalCashInBank">
+                    {{'label.input.shg.fund.total.cash.in.bank' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="totalCashInBank" name="totalCashInBank"
+                           ng-model="formData.totalCashInBank"
+                           number-format required late-Validate/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="totalCashInBank"/>
+                </div>
+            </div>
+
+            <div class="form-group" ng-if="false">
+                <label class="control-label col-sm-2" for="totalDeposits">
+                    {{'label.input.shg.fund.total.deposits' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <div>
+                        <input type="text" class="form-control" id="totalDeposits" name="totalDeposits"
+                               ng-model="formData.totalDeposits"
+                               number-format required late-Validate/>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="totalDeposits"/>
+                </div>
+
+                <label class="control-label col-sm-2" for="totalLoanPortfolio">
+                    {{'label.input.shg.fund.total.loan.portfolio' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="totalLoanPortfolio" name="totalLoanPortfolio"
+                           ng-model="formData.totalLoanPortfolio"
+                           number-format required late-Validate/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="totalLoanPortfolio"/>
+                </div>
+            </div>
+
+            <div class="form-group" ng-if="false">
+                <label class="control-label col-sm-2" for="totalFeeCollected">
+                    {{'label.input.shg.fund.total.fee.collected' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <div>
+                        <input type="text" class="form-control" id="totalFeeCollected" name="totalFeeCollected"
+                               ng-model="formData.totalFeeCollected"
+                               number-format required late-Validate/>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="totalFeeCollected"/>
+                </div>
+
+                <label class="control-label col-sm-2" for="totalExpenses">
+                    {{'label.input.shg.fund.total.expenses' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="totalExpenses" name="totalExpenses"
+                           ng-model="formData.totalExpenses"
+                           number-format required late-Validate/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="totalExpenses"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="totalExpenses">
+                    {{'label.input.shg.fund.loan.limit.based.on.savings' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="checkbox" id="loanLimitBasedOnSavings " name="loanLimitBasedOnSavings"
+                           ng-model="formData.loanLimitBasedOnSavings"/>
+                </div>
+                <div class="col-sm-2"></div>
+
+                <div ng-if="formData.loanLimitBasedOnSavings != true">
+                    <label class="control-label col-sm-2" for="loanLimitAmount">
+                        {{'label.input.shg.fund.loan.limit.amount' | translate}}<span class="required">*</span>
+                    </label>
+                    <div class="col-sm-2">
+                        <div>
+                            <input type="text" class="form-control" id="loanLimitAmount" name="loanLimitAmount"
+                                   ng-model="formData.loanLimitAmount"
+                                   number-format required late-Validate/>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <form-validate valattributeform="createshgfundform" valattribute="loanLimitAmount"/>
+                    </div>
+                </div>
+
+
+                <div ng-if="formData.loanLimitBasedOnSavings == true">
+                    <label class="control-label col-sm-2" for="LoanLimitFactor">
+                        {{'label.input.shg.fund.loan.limit.factor' | translate}}<span class="required">*</span>
+                    </label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="LoanLimitFactor" name="LoanLimitFactor"
+                               ng-model="formData.LoanLimitFactor"
+                               number-format required late-Validate/>
+                    </div>
+                    <div class="col-sm-2">
+                        <form-validate valattributeform="createshgfundform" valattribute="LoanLimitFactor"/>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <legend class="bolder">{{'label.heading.create.shg.fund.terms' | translate}}</legend>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="annualNominalInterestRate">
+                    {{'label.input.shg.fund.loan.product.annual.nominal.interest.rate' | translate}}<span
+                        class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="annualNominalInterestRate"
+                           name="annualNominalInterestRate" ng-model="formData.annualNominalInterestRate"
+                           number-format required late-Validate/>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="annualNominalInterestRate"/>
+                </div>
+
+                <label class="control-label col-sm-2" for="interestMethod">
+                    {{'label.input.interestmethod' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <select id="interestMethod" name="interestMethod" ng-model="formData.interestMethod" class="form-control"
+                            ng-options="interestType.id as interestType.value for interestType in product.interestTypeOptions"
+                            value="{{interestMethod.id}}" required late-validate>
+                        <option value="">--{{'label.menu.selectone' | translate}}--</option>
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="interestMethod"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="interestCalculatedInPeriod">
+                    {{'label.input.interestcalculationperiod' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <select id="interestCalculatedInPeriod" name="interestCalculatedInPeriod" ng-model="formData.interestCalculatedInPeriod" class="form-control"
+                            ng-options="interestType.id as interestType.value for interestType in product.interestTypeOptions"
+                            value="{{interestMethod.id}}" required late-validate>
+                        <option value="">--{{'label.menu.selectone' | translate}}--</option>
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="interestCalculatedInPeriod"/>
+                </div>
+
+                <label class="control-label col-sm-2" for="repayEvery">
+                    {{'label.input.repaidevery' | translate}}<span class="required">*</span>
+                </label>
+                <div class="col-sm-2">
+                    <input id="repayEvery" name="repayEvery" class="form-control" type="text"
+                           ng-model="formData.repayEvery" required late-validate/>
+
+                    <select id="repaymentPeriodFrequency" name="repaymentPeriodFrequency" class="form-control"
+                            ng-model="formData.repaymentPeriodFrequency"
+                            ng-options="repaymentFrequencyType.id as repaymentFrequencyType.value for repaymentFrequencyType in product.repaymentFrequencyTypeOptions"
+                            value="{{repaymentFrequencyType.id}}"></select>
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="repayEvery"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">{{ 'label.input.numofrepayments' | translate }}<span class="required">*</span>
+                    <i class="icon-question-sign" tooltip="{{'label.tooltip.loanproduct.numofrepayments' | translate}}"
+                       tooltip-append-to-body="true"></i>
+                </label>
+
+                <div class="col-sm-2">
+                    <input id="minNumberOfRepayments " placeholder="{{'label.input.minimum' | translate}}" type="text"
+                           class="form-control" ng-model="formData.minNumberOfRepayments">
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" placeholder="{{'label.input.default' | translate}}" id="numberOfRepayments"
+                           name="numberOfRepayments" class="form-control" ng-model="formData.numberOfRepayments" required
+                           late-validate/>
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" placeholder="{{'label.input.maximum' | translate}}" id="maxNumberOfRepayments"
+                           class="form-control" ng-model="formData.maxNumberOfRepayments">
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createshgfundform" valattribute="numberOfRepayments"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">{{ 'label.input.amortization' | translate }}<span class="required">*</span>
+                    <i class="icon-question-sign" tooltip="{{'label.tooltip.amortization' | translate}}"
+                       tooltip-append-to-body="true"></i>
+                </label>
+
+                <div class="col-sm-2">
+                    <select id="amortizationMethod" ng-model="formData.amortizationMethod" class="form-control"
+                            ng-options="amortizationType.id as amortizationType.value for amortizationType in product.amortizationTypeOptions"
+                            value="{{amortizationType.id}}"></select>
+                </div>
+
+                <!--<label class="control-label col-sm-3 col-sm-offset-1">{{ 'label.input.interestmethod' | translate }}<span
+                        class="required">*</span>
+                    <i class="icon-question-sign" tooltip="{{'label.tooltip.interest' | translate}}"
+                       tooltip-append-to-body="true"></i>
+                </label>
+
+                <div class="col-sm-2">
+                    <select id="interestType" ng-model="formData.interestType" class="form-control"
+                            ng-options="interestType.id as interestType.value for interestType in product.interestTypeOptions"
+                            value="{{interestType.id}}"></select>
+                </div>-->
+            </div>
+
+            <br>
+            <legend class="bolder">{{'label.anchor.createcharge' | translate}}</legend>
+            <ng-form name="createshgfundchargeform" ng-submit="addCharges()">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">{{'label.input.chargesappliesto' | translate}}<span
+                            class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <select id="chargeAppliesTo" name="chargeappliesto" ng-model="shgCharge.chargeAppliesTo"
+                                ng-options="chargesapply.id as translate(chargesapply.code) for chargesapply in template.chargeAppliesToOptions"
+                                value="{{chargesapply.id}}" ng-change="chargeAppliesToSelected(shgCharge.chargeAppliesTo)" class="form-control"
+                                required>
+                            <option value="">{{'label.selectone' | translate}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <form-validate valattributeform="createshgfundchargeform" valattribute="chargeappliesto"/>
+                    </div>
+
+                    <div class="col-md-offset-10">
+                        <button type="submit" class="btn btn-primary">
+                            {{'label.button.add' | translate}}
+                        </button>
+                    </div>
+                </div>
+                <hr/>
+                <div ng-show="true">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">{{'label.input.name' | translate}}<span
+                                class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <input name="chname" type="text" id="chname" ng-model="shgCharge.name" class="form-control" required late-Validate/>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <form-validate valattributeform="createshgfundchargeform" valattribute="chname"/>
+                        </div>
+
+                        <label class="control-label col-sm-2">{{'label.input.currency' | translate}}<span
+                                class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <select id="currencyCode" name="currency" ng-model="shgCharge.currencyCode"
+                                    ng-options="currency.code as currency.name for currency in template.currencyOptions"
+                                    value="{{currency.code}}" class="form-control" required>
+                                <option value="">{{'label.selectcurrency' | translate}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <form-validate valattributeform="createshgfundchargeform" valattribute="currency"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">{{'label.input.chargetimetype' | translate}}<span
+                                class="required">*</span></label>
+                        <div class="col-sm-2">
+                            <select id="chargeTimeType" name="chargetimetype" ng-model="shgCharge.chargeTimeType"
+                                    ng-options="timetype.id as timetype.value for timetype in chargeTimeTypeOptions"
+                                    value="{{timetype.id}}" ng-change="chargeTimeChange(shgCharge.chargeTimeType)" class="form-control" required>
+                                <option value="">{{'label.selectone' | translate}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <form-validate valattributeform="createshgfundchargeform" valattribute="chargetimetype"/>
+                        </div>
+
+                        <label class="control-label col-sm-2">{{'label.input.chargecalculation' | translate}}<span
+                                class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <select id="chargeCalculationType" name="chargecalculation"
+                                    ng-model="shgCharge.chargeCalculationType"
+                                    ng-options="chargecalculation.id as chargecalculation.value for chargecalculation in chargeCalculationTypeOptions | filter:filterChargeCalculations(shgCharge.chargeTimeType)"
+                                    value="{{chargecalculation.id}}" class="form-control" required>
+                                <option value="">{{'label.selectone' | translate}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <form-validate valattributeform="createshgfundchargeform" valattribute="chargecalculation"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="showChargePaymentByField">
+                        <label class="control-label col-sm-2">{{'label.input.chargepaymentby' | translate}}<span
+                                class="required">*</span></label>
+                        <div class="col-sm-2">
+                            <select id="chargePaymentMode" name="showchargepaymentbyfield"
+                                    ng-model="shgCharge.chargePaymentMode"
+                                    ng-options="chargepayment.id as chargepayment.value for chargepayment in template.chargePaymetModeOptions"
+                                    value="{{chargepayment.id}}" ng-required="showChargePaymentByField" class="form-control">
+                                <option value="">{{'label.selectone' | translate}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <form-validate valattributeform="createshgfundchargeform" valattribute="showchargepaymentbyfield"/>
+                        </div>
+
+                        <div ng-show="showdatefield">
+                            <label class="control-label col-sm-2">{{'label.input.duedate' | translate}}<span
+                                    class="required">*</span></label>
+
+                            <div class="col-sm-2">
+                                <input id="duedate" type="text" datepicker-pop="dd MMMM" ng-model="first.date" is-open="opened"
+                                       min="minDate" max="'2020-06-22'" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="showFrequencyOptions">
+                        <label class="control-label col-sm-2">{{ 'label.input.addfeefrequency' | translate }}&nbsp;</label>
+                        <div class="col-sm-2">
+                            <label class="checkbox">
+                                <input id="addfeefrequency" type="checkbox" ng-model="addfeefrequency" ng-true-value="true"
+                                       ng-false-value="false">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="addfeefrequency ">
+                        <label class="control-label col-sm-2" for="feeFrequency">{{'label.input.feefrequency' | translate}}<span
+                                class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <select id="feeFrequency" name="feeFrequency" ng-model="shgCharge.feeFrequency"
+                                    ng-options="frequency.id as frequency.value for frequency in template.feeFrequencyOptions"
+                                    value="{{frequency.id}}" class="form-control">
+                                <option value="">{{'label.selectone' | translate}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <form-validate valattributeform="createshgfundchargeform" valattribute="chargeappliesto"/>
+                        </div>
+
+                        <div ng-show="addfeefrequency">
+                            <label class="control-label col-sm-2" for="feeInterval">{{'label.input.frequencyInterval' | translate}}<span
+                                    class="required">*</span></label>
+
+                            <div class="col-sm-2">
+                                <input class="input-sm form-control" id="feeIntervalLoan" name="feeIntervalLoan" type="text"
+                                       ng-model="shgCharge.feeInterval" late-Validate/>
+                            </div>
+                            <div class="col-sm-2">
+                                <form-validate valattributeform="createshgfundchargeform" valattribute="feeIntervalLoan"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="repeatEvery">
+                        <label class="control-label col-sm-2" for="feeInterval">{{'label.input.repeatsevery' | translate}}<span
+                                class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <input class="input-sm form-control" id="feeInterval" name="feeInterval" type="text"
+                                   ng-model="shgCharge.feeInterval" ng-required="repeatEvery" late-Validate/>
+                        </div>
+                        <div class="col-sm-2 paddingleft0px">
+                            {{repeatsEveryLabel | translate}}
+                            <form-validate valattributeform="createshgfundchargeform" valattribute="feeInterval"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="amount">{{'label.input.amount' | translate}}<span
+                                class="required">*</span></label>
+
+                        <div class="col-sm-2">
+                            <input id="amount" name="amount" type="text" ng-model="shgCharge.amount" class="form-control" number-format required late-Validate/>
+                        </div>
+                        <div class="col-sm-2">
+                            <form-validate valattributeform="createshgfundchargeform" valattribute="amount"/>
+                        </div>
+
+                        <label class="control-label col-sm-2" for="active">{{'label.input.active' | translate}}</label>
+
+                        <div class="col-sm-2">
+                            <label class="checkbox">
+                                <input id="active" type="checkbox" ng-model="shgCharge.active" data-ng-change="setChoice()">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="showPenalty">
+                        <label class="control-label col-sm-2" for="ispenalty">{{'label.input.ispenalty' | translate}}</label>
+
+                        <div class="col-sm-2">
+                            <label class="checkbox">
+                                <input id="ispenalty" type="checkbox" ng-model="shgCharge.penalty" ng-true-value="true"
+                                       ng-false-value="false">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="showGLAccount">
+                        <label class="control-label col-sm-2">{{ 'label.input.incomefromcharges' | translate }}</label>
+                        <div class="col-sm-2">
+                            <select id="incomeOrLiabilityAccountId" ng-model="shgCharge.incomeAccountId"
+                                    chosen="incomeAndLiabilityAccountOptions"
+                                    ng-options="incomeAccount.id as incomeAccount.name for incomeAccount in incomeAndLiabilityAccountOptions"
+                                    value="{{incomeAccount.id}}">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">{{ 'label.input.taxgroup' | translate }}</label>
+                        <div class="col-sm-2">
+                            <select id="taxGroupId" ng-model="shgCharge.taxGroupId"
+                                    chosen="template.taxGroupOptions"
+                                    ng-options="taxGroup.id as taxGroup.name for taxGroup in template.taxGroupOptions"
+                                    value="{{taxGroup.id}}">
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </ng-form>
+            <table class="table" ng-if="formData.shgCharges.length > 0">
+                <thead>
+                <tr class="graybg">
+                    <th>{{'label.heading.officeName' | translate}}</th>
+                    <th>{{'label.heading.externalid' | translate}}</th>
+                    <th>{{'label.heading.parentoffice' | translate}}</th>
+                    <th>{{'label.heading.openedon' | translate}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="pointer-main" ng-repeat="office in formData.shgCharges">
+                    <td>{{office.name}}</td>
+                    <td>{{office.externalId}}</td>
+                    <td>{{office.parentName}}</td>
+                    <td>{{office.openingDate | DateFormat}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <br>
+            <div class="col-md-offset-5">
+                <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">{{'label.button.cancel' | translate}}</a>
+                <button id="save" type="submit" class="btn btn-primary" has-permission='CREATE_FUND'>
+                    {{'label.button.save' | translate}}
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>

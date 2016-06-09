@@ -533,8 +533,14 @@
             .when('/groups', {
                 templateUrl: 'views/groups/groups.html'
             })
+            .when('/groups/shg', {
+                templateUrl: 'views/savingsgroups/shggroups.html'
+            })
             .when('/creategroup', {
                 templateUrl: 'views/groups/creategroup.html'
+            })
+            .when('/creategroup/shg', {
+                templateUrl: 'views/savingsgroups/createshggroup.html'
             })
             .when('/attachmeeting/:id/:entityType', {
                 templateUrl: 'views/groups/attachmeeting.html'
@@ -610,6 +616,15 @@
             })
             .when('/viewgroup/:id', {
                 templateUrl: 'views/groups/viewgroup.html'
+            })
+            .when('/viewgroup/shg/:id', {
+                templateUrl: 'views/savingsgroups/viewshggroup.html'
+            })
+            .when('/groups/:groupId/createshgfund', {
+                templateUrl: 'views/savingsgroups/createshgfund.html'
+            })
+            .when('/groups/:groupId/createshgcycle', {
+                templateUrl: 'views/savingsgroups/createshgcycle.html'
             })
             .when('/editgroup/:id', {
                 templateUrl: 'views/groups/editgroup.html'
